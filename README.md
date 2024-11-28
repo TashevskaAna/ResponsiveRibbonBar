@@ -1,4 +1,4 @@
-#Responsive Ribbon Bar
+
 
 **Opis projekta**
 
