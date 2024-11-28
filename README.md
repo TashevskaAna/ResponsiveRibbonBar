@@ -90,3 +90,28 @@ Ko kliknemo v sekcijo z naslov Font na gumb za storitve, se prikaže pojavno okn
 
 Isto je narejeno in v sekcijo z naslov Paragraph
 ![Screenshot 2024-11-28 111712](https://github.com/user-attachments/assets/bf996f87-4deb-4bb8-8c0e-1db45c65af4e)
+
+Zavihek Insert
+![Screenshot 2024-11-28 111736](https://github.com/user-attachments/assets/1e0f05e9-5817-49a9-8e57-368057709668)
+
+Ko kliknemo na Cover Page lahko izberemo predloge, okno se izklopi ko kliknemo z miško kjerkoli
+![Screenshot 2024-11-28 111752](https://github.com/user-attachments/assets/4bc1d340-7501-4613-83ec-0ade490dc6a5)
+
+Zavihek Draw
+![Screenshot 2024-11-28 111809](https://github.com/user-attachments/assets/f9990b1e-9b49-4c42-b230-f03ff4360179)
+
+Pri prvem zmanjšanju se skrije vsebina prvo sekcijo Paragraph
+![Screenshot 2024-11-28 111825](https://github.com/user-attachments/assets/fc7dd96e-5304-4063-87d0-516820ce7456)
+
+Ko zmanjšamo v celoti se skrije vsebina tudi in sekcijo Font
+![Screenshot 2024-11-28 111836](https://github.com/user-attachments/assets/a4efd725-2159-41ba-8354-ac32a742f016)
+
+Ko kliknemo na gumb se prikaže celotno vsebino sekcijo Font (naslov, vsebina in gumb za storitve). Okno se izklopi ko kliknemo z miško kjerkoli
+![Screenshot 2024-11-28 111849](https://github.com/user-attachments/assets/49ec2850-d62a-41bc-91ea-44a67b8b8be1)
+
+Enako naredimo z sekcijo Paragraph
+![Screenshot 2024-11-28 111904](https://github.com/user-attachments/assets/f9304f96-6c9f-4bcf-bf38-1cf1a8a51c0f)
+
+Dodala ScrollPane sem za bolj učinkovit videz
+![Screenshot 2024-11-28 112116](https://github.com/user-attachments/assets/a93b026f-3825-4cc4-bf3a-7098b5e26103)
+
