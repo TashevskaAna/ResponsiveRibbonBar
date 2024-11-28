@@ -1,3 +1,5 @@
+#Responsive Ribbon Bar
+
 **Opis projekta**
 
 Ta projekt implementira odzivno postavitev Ribbon, ki posnema Ribbon-Bar iz Microsoft Worda. Namenjena je ustvarjanju prilagodljivih uporabniških vmesnikov v JavaFX. Ključne značilnosti vključujejo:
@@ -74,3 +76,8 @@ Vsebuje ikone, sloge in oblikovanje za komponente.
 HelloApplication.java:
 
 Glavna aplikacija za prikaz delovanja Ribbon postavitve.
+
+Spodaj so podane slike kako zgleda moja aplilacija:
+
+![Screenshot 2024-11-28 111605](https://github.com/user-attachments/assets/4702910f-7137-43de-9655-2125e132d0e1)
+
