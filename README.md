@@ -1,4 +1,5 @@
-
+# DrzavniZbor
+Spletna aplikacija za prikaz sej Državnega zbora Republike Slovenije
 
 **Opis projekta**
 
