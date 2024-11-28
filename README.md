@@ -77,7 +77,16 @@ HelloApplication.java:
 
 Glavna aplikacija za prikaz delovanja Ribbon postavitve.
 
-Spodaj so podane slike kako zgleda moja aplilacija:
+Spodaj so podane slike kako zgleda moja aplikacija:
 
+Na začetek imamo na voljo in pregled na vse komponente 
 ![Screenshot 2024-11-28 111605](https://github.com/user-attachments/assets/4702910f-7137-43de-9655-2125e132d0e1)
 
+Potem v sekcijo z naslov Clipboard je kliknjen gumb za storitve in se prikaze na levi strani 
+![Screenshot 2024-11-28 111630](https://github.com/user-attachments/assets/1c926149-2c7b-44e0-8bff-16a560890540)
+
+Ko kliknemo v sekcijo z naslov Font na gumb za storitve, se prikaže pojavno okno z svojimi funkcionalnostimi
+![Screenshot 2024-11-28 111647](https://github.com/user-attachments/assets/c36d535e-5bb2-48d9-b863-6baa9c2f7150)
+
+Isto je narejeno in v sekcijo z naslov Paragraph
+![Screenshot 2024-11-28 111712](https://github.com/user-attachments/assets/bf996f87-4deb-4bb8-8c0e-1db45c65af4e)
