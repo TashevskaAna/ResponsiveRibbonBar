@@ -1,4 +1,5 @@
 **Opis projekta**
+
 Ta projekt implementira odzivno postavitev Ribbon, ki posnema Ribbon-Bar iz Microsoft Worda. Namenjena je ustvarjanju prilagodljivih uporabniških vmesnikov v JavaFX. Ključne značilnosti vključujejo:
 
 _Odzivno obnašanje:_
