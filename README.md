@@ -1,5 +1,5 @@
-# DrzavniZbor
-Spletna aplikacija za prikaz sej Državnega zbora Republike Slovenije
+# Responsive Ribbon Bar
+Odzivna postavitev Ribbon-Bar
 
 **Opis projekta**
 
