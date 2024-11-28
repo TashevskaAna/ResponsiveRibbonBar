@@ -1,0 +1,178 @@
+
+.border-pane {
+    -fx-background-color: #E1E1E1;
+}
+
+
+.tab-pane {
+    -fx-background-color: #F2F2F2;
+    -fx-border-color: #D1D1D1;
+    -fx-border-width: 1;
+}
+
+
+.tool-bar {
+    -fx-background-color: #F3F3F3;
+    -fx-border-color: #D0D0D0;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+    -fx-border-radius: 3;
+}
+
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #F7F7F7, #D0D0D0);
+    -fx-border-color: #A0A0A0;
+    -fx-border-width: 1;
+    -fx-border-radius: 2;
+    -fx-padding: 5 10;
+    -fx-font-size: 10pt;
+    -fx-font-family: Arial;
+}
+
+
+#serviceButton {
+    -fx-background-color: transparent;
+    -fx-font-size: 5pt;
+    -fx-text-fill: gray;
+}
+
+#serviceButton1 {
+    -fx-background-color: transparent;
+    -fx-font-size: 5pt;
+    -fx-text-fill: gray;
+}
+
+#serviceButton2 {
+    -fx-background-color: transparent;
+    -fx-font-size: 5pt;
+    -fx-text-fill: gray;
+}
+
+#documentScrollPane{
+    -fx-background: lightgray;
+}
+
+#documentArea{
+    -fx-background-color: grey;
+    -fx-border-color: black;
+    -fx-padding: 20;
+}
+
+
+#textArea{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.label {
+    -fx-font-size: 10pt;
+    -fx-text-fill: gray;
+}
+
+
+.combo-box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #A0A0A0;
+    -fx-border-width: 1;
+    -fx-padding: 2;
+    -fx-font-size: 10pt;
+}
+
+
+.menu-button {
+    -fx-background-color: #F7F7F7;
+    -fx-border-color: #A0A0A0;
+    -fx-border-width: 1;
+    -fx-font-size: 10pt;
+}
+
+#VBox1{
+    -fx-padding: 10 0 0 0;
+}
+
+
+#highlightButton {
+    -fx-background-color: yellow;
+}
+
+#fontColorButton {
+    -fx-text-fill: red;
+}
+
+#fontSection{
+    -fx-padding: 10 0 0 0;
+}
+
+
+#boldButton {
+    -fx-font-weight: bold;
+}
+
+#italicButton {
+    -fx-font-style: italic;
+}
+
+#underlineButton {
+    -fx-underline: true;
+}
+
+#paragraphSection{
+    -fx-padding: 10 0 0 0;
+}
+
+#popupContainer{
+    -fx-background-color: #F3F3F3;
+    -fx-border-color: #D0D0D0;
+    -fx-padding: 10;
+    -fx-spacing: 5;
+}
+
+#Labelpopup{
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+#Buttonpopup{
+    -fx-padding: 5;
+    -fx-font-size: 10pt;
+}
+
+#Buttonpopup1{
+    -fx-padding: 5;
+    -fx-font-size: 10pt;
+}
+
+#Labelpopup1{
+    -fx-font-size: 10pt;
+    -fx-text-fill: #666666;
+}
+
+
+#fontToolBar > .hbox > .label,
+#paragToolBar > .hbox > .label {
+    -fx-font-size: 10pt;
+    -fx-text-fill: gray;
+    -fx-alignment: center;
+}
+
+
+#alignLeftButton, #alignCenterButton, #alignRightButton, #justifyButton {
+    -fx-background-color: #F7F7F7;
+    -fx-border-color: #A0A0A0;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+
+#fontFamilyComboBox, #fontSizeComboBox {
+    -fx-background-color: white;
+    -fx-border-color: #C0C0C0;
+}
+
+
+.tool-bar > .button, .tool-bar > .menu-button, .tool-bar > .combo-box {
+    -fx-margin: 0 2px;
+}

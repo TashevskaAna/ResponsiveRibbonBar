@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="417.0" prefWidth="1081.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ribbonbar.HelloController">
+  <top>
+    <TabPane fx:id="ribbonTabPane" prefHeight="300.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="%tab.home.text">
+          <content>
+            <HBox fx:id="homeContent" prefHeight="300.0" prefWidth="800.0" spacing="5">
+              <VBox fx:id="VBox1" spacing="5">
+                <HBox spacing="5">
+                  <!-- Large Paste Button -->
+                  <SplitMenuButton fx:id="pasteButton" contentDisplay="TOP" graphicTextGap="10" text="%pasteButton.text">
+                    <graphic>
+                      <ImageView fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/paste.png" />
+                      </ImageView>
+                    </graphic>
+                    <items>
+                      <MenuItem text="%pasteSpecial.text" />
+                      <MenuItem text="%setDefaultPaste.text" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%pasteButton.tooltip" />
+                    </tooltip>
+                  </SplitMenuButton>
+
+                  <!-- Right-side small buttons in a VBox -->
+                  <VBox alignment="TOP_CENTER" spacing="5">
+                    <!-- Cut Button -->
+                    <Button fx:id="cutButton" graphicTextGap="0">
+                      <graphic>
+                        <ImageView fitHeight="16" fitWidth="16" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/cut.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%cutButton.tooltip" />
+                      </tooltip>
+                    </Button>
+
+                    <!-- Copy Button -->
+                    <Button fx:id="copyButton" graphicTextGap="0">
+                      <graphic>
+                        <ImageView fitHeight="16" fitWidth="16" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/copy.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%copyButton.tooltip" />
+                      </tooltip>
+                    </Button>
+
+                    <!-- Format Painter Button -->
+                    <Button fx:id="formatPainterButton" graphicTextGap="0">
+                      <graphic>
+                        <ImageView fitHeight="16" fitWidth="16" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/format-painter.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%formatPainterButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                  </VBox>
+                </HBox>
+
+                <!-- Label for Clipboard Section -->
+                <HBox alignment="CENTER">
+                  <Label text="%clipboard.label" />
+                </HBox>
+
+                <!-- Bottom-right aligned service button -->
+                <HBox alignment="BOTTOM_RIGHT" prefHeight="61.0">
+                  <Button fx:id="serviceButton" onAction="#showPopup" text="%serviceButton.text" />
+                </HBox>
+              </VBox>
+
+
+
+
+              <Separator orientation="VERTICAL" prefHeight="55.0" prefWidth="29.0" />
+
+              <VBox fx:id="fontSection" spacing="5">
+
+                <!-- Final narrow icon button for the Font Section -->
+                <Button fx:id="fontToggleButton" visible="false">
+                  <graphic>
+                    <ImageView fitHeight="30" fitWidth="30" pickOnBounds="true" preserveRatio="true">
+                      <Image url="@images/font-section-icon.png" />
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%fontToggleButton.tooltip" />
+                  </tooltip>
+                </Button>
+
+                <!-- First Row of Font Section -->
+                <ToolBar fx:id="fontToolBarRow1" orientation="HORIZONTAL" prefHeight="35.0" prefWidth="500.0">
+
+                  <!-- Font Family ComboBox -->
+                  <ComboBox fx:id="fontFamilyComboBox" prefWidth="100.0" promptText="%fontFamilyComboBox.promptText">
+                    <tooltip>
+                      <Tooltip text="%fontFamilyComboBox.tooltip" />
+                    </tooltip>
+                  </ComboBox>
+
+                  <!-- Font Size ComboBox -->
+                  <ComboBox fx:id="fontSizeComboBox" prefWidth="50.0" promptText="%fontSizeComboBox.promptText">
+                    <tooltip>
+                      <Tooltip text="%fontSizeComboBox.tooltip" />
+                    </tooltip>
+                  </ComboBox>
+
+                  <!-- Increase/Decrease Font Size Buttons -->
+                  <Button fx:id="increaseFontSizeButton" text="%increaseFontSizeButton.text">
+                    <tooltip>
+                      <Tooltip text="%increaseFontSizeButton.tooltip" />
+                    </tooltip>
+                  </Button>
+                  <Button fx:id="decreaseFontSizeButton" text="%decreaseFontSizeButton.text">
+                    <tooltip>
+                      <Tooltip text="%decreaseFontSizeButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <!-- Bold, Italic, and Underline Buttons -->
+                  <Button fx:id="boldButton" text="%boldButton.text">
+                    <tooltip>
+                      <Tooltip text="%boldButton.tooltip" />
+                    </tooltip>
+                  </Button>
+                  <Button fx:id="italicButton" text="%italicButton.text">
+                    <tooltip>
+                      <Tooltip text="%italicButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <MenuButton fx:id="underlineButton" text="%underlineButton.text">
+                    <items>
+                      <MenuItem text="%underlineButton.single" />
+                      <MenuItem text="%underlineButton.double" />
+                      <MenuItem text="%underlineButton.dotted" />
+                      <MenuItem text="%underlineButton.dashed" />
+                      <MenuItem text="%underlineButton.wave" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%underlineButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+                </ToolBar>
+
+                <!-- Second Row of Font Section -->
+                <ToolBar fx:id="fontToolBarRow2" orientation="HORIZONTAL" prefHeight="35.0" prefWidth="500.0">
+
+                  <!-- Subscript and Superscript Buttons -->
+                  <Button fx:id="subscriptButton" text="%subscriptButton.text">
+                    <tooltip>
+                      <Tooltip text="%subscriptButton.tooltip" />
+                    </tooltip>
+                  </Button>
+                  <Button fx:id="superscriptButton" text="%superscriptButton.text">
+                    <tooltip>
+                      <Tooltip text="%superscriptButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <!-- Highlight Color Button -->
+                  <MenuButton fx:id="highlightButton" text="%highlightButton.text">
+                    <items>
+                      <MenuItem text="%highlightButton.yellow" />
+                      <MenuItem text="%highlightButton.green" />
+                      <MenuItem text="%highlightButton.blue" />
+                      <MenuItem text="%highlightButton.pink" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%highlightButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+
+                  <!-- Font Color Button -->
+                  <MenuButton fx:id="fontColorButton" text="%fontColorButton.text">
+                    <items>
+                      <MenuItem text="%fontColorButton.red" />
+                      <MenuItem text="%fontColorButton.blue" />
+                      <MenuItem text="%fontColorButton.green" />
+                      <MenuItem text="%fontColorButton.black" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%fontColorButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+                </ToolBar>
+
+                <!-- Font Section Label -->
+                <HBox alignment="CENTER">
+                  <Label text="%fontSection.label" />
+                </HBox>
+
+                <!-- Font Service Button -->
+                <HBox alignment="BOTTOM_RIGHT" prefHeight="20.0">
+                  <Button fx:id="serviceButton1" onAction="#openFontDialog" text="%serviceButton1.text">
+                    <tooltip>
+                      <Tooltip text="%serviceButton1.tooltip" />
+                    </tooltip>
+                  </Button>
+                </HBox>
+              </VBox>
+
+
+              <Separator orientation="VERTICAL" prefHeight="55.0" prefWidth="29.0" />
+
+              <VBox fx:id="paragraphSection" spacing="5" >
+                <!-- Toggle button for narrow mode -->
+                <Button fx:id="paragraphToggleButton" visible="false">
+                  <graphic>
+                    <ImageView fitHeight="30" fitWidth="37" pickOnBounds="true" preserveRatio="true">
+                      <Image url="@images/paragraph-icon1.png" />
+                    </ImageView>
+                  </graphic>
+                  <tooltip>
+                    <Tooltip text="%paragraphToggleButton.tooltip" />
+                  </tooltip>
+                </Button>
+
+                <!-- First Row of Paragraph Section -->
+                <ToolBar fx:id="paragToolBarRow1" orientation="HORIZONTAL" prefHeight="35.0" prefWidth="500.0">
+
+                  <!-- Bullet List Button -->
+                  <MenuButton fx:id="bulletButton" text="%bulletButton.text">
+                    <items>
+                      <MenuItem text="%bulletButton.bullets" />
+                      <MenuItem text="%bulletButton.hollow" />
+                      <MenuItem text="%bulletButton.square" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%bulletButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+
+                  <!-- Numbering Button -->
+                  <MenuButton fx:id="numberingMenuButton" text="%numberingMenuButton.text">
+                    <tooltip>
+                      <Tooltip text="%numberingMenuButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+
+                  <!-- Multilevel List Button -->
+                  <MenuButton fx:id="multilevelListButton" text="%multilevelListButton.text">
+                    <items>
+                      <MenuItem text="%multilevelListButton.multilevel" />
+                      <MenuItem text="%multilevelListButton.numeric" />
+                      <MenuItem text="%multilevelListButton.custom" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%multilevelListButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+                </ToolBar>
+
+                <!-- Second Row of Paragraph Section -->
+                <ToolBar fx:id="paragToolBarRow2" orientation="HORIZONTAL" prefHeight="35.0" prefWidth="500.0">
+
+                  <!-- Alignment Buttons -->
+                  <Button fx:id="alignLeftButton" text="%alignLeftButton.text">
+                    <tooltip>
+                      <Tooltip text="%alignLeftButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <Button fx:id="alignCenterButton" text="%alignCenterButton.text">
+                    <tooltip>
+                      <Tooltip text="%alignCenterButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <Button fx:id="alignRightButton" text="%alignRightButton.text">
+                    <tooltip>
+                      <Tooltip text="%alignRightButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <Button fx:id="justifyButton" text="%justifyButton.text">
+                    <tooltip>
+                      <Tooltip text="%justifyButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <!-- Line and Paragraph Spacing -->
+                  <MenuButton fx:id="lineSpacingButton" text="%lineSpacingButton.text">
+                    <items>
+                      <MenuItem text="%lineSpacingButton.single" />
+                      <MenuItem text="%lineSpacingButton.oneHalf" />
+                      <MenuItem text="%lineSpacingButton.double" />
+                      <MenuItem text="%lineSpacingButton.multiple" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%lineSpacingButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+
+                  <!-- Sort Button -->
+                  <Button fx:id="sortButton" text="%sortButton.text">
+                    <tooltip>
+                      <Tooltip text="%sortButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <!-- Show/Hide Paragraph Marks Button -->
+                  <Button fx:id="showHideButton" text="%showHideButton.text">
+                    <tooltip>
+                      <Tooltip text="%showHideButton.tooltip" />
+                    </tooltip>
+                  </Button>
+
+                  <!-- Borders Button -->
+                  <MenuButton fx:id="bordersButton" text="%bordersButton.text">
+                    <items>
+                      <MenuItem text="%bordersButton.bottom" />
+                      <MenuItem text="%bordersButton.top" />
+                      <MenuItem text="%bordersButton.left" />
+                      <MenuItem text="%bordersButton.right" />
+                      <MenuItem text="%bordersButton.none" />
+                      <MenuItem text="%bordersButton.all" />
+                      <MenuItem text="%bordersButton.outside" />
+                      <MenuItem text="%bordersButton.inside" />
+                    </items>
+                    <tooltip>
+                      <Tooltip text="%bordersButton.tooltip" />
+                    </tooltip>
+                  </MenuButton>
+                </ToolBar>
+
+                <!-- Label for Paragraph Section -->
+                <HBox alignment="CENTER">
+                  <Label text="%paragraphSection.label" />
+                </HBox>
+
+                <!-- Bottom-right aligned service button for paragraph settings dialog -->
+                <HBox alignment="BOTTOM_RIGHT" prefHeight="27">
+                  <Button fx:id="serviceButton2" onAction="#openParagraphDialog" text="%serviceButton2.text">
+                    <tooltip>
+                      <Tooltip text="%serviceButton2.tooltip" />
+                    </tooltip>
+                  </Button>
+                </HBox>
+              </VBox>
+
+            </HBox>
+          </content>
+        </Tab>
+
+        <!-- Additional Tabs -->
+        <Tab  text="%tab.insert.text">
+          <content>
+            <HBox fx:id="InsertContent" prefHeight="140.0" prefWidth="800.0" spacing="20" alignment="CENTER_LEFT">
+              <!-- Pages Section -->
+              <VBox alignment="CENTER" spacing="5">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+
+                  <!-- Cover Page -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="coverPageButton" style="-fx-background-color: transparent;" onAction="#showCoverPageTemplates">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/cover-page.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%coverPage.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%coverPage.label" />
+                  </VBox>
+
+                  <!-- Blank Page -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="blankPageButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/blank-page.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%blankPage.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%blankPage.label" />
+                  </VBox>
+
+                  <!-- Page Break -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="pageBreakButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/page-break.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%pageBreak.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%pageBreak.label" />
+                  </VBox>
+
+                  <!-- Tables Section -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="tableButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/table.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%table.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label alignment="CENTER" text="%table.label" />
+                  </VBox>
+                </HBox>
+                <Label alignment="CENTER" text="%pagesSection.label" />
+              </VBox>
+
+              <Separator orientation="VERTICAL" prefHeight="55.0" prefWidth="29.0" />
+
+              <!-- Illustrations Section -->
+              <VBox alignment="CENTER" spacing="5">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                  <!-- Pictures -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="picturesButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/picture.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%picturesButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%picturesButton.label" />
+                  </VBox>
+
+                  <!-- Shapes -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="shapesButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/shapes.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%shapesButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%shapesButton.label" />
+                  </VBox>
+
+                  <!-- Icons -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="iconsButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/icons.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%iconsButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%iconsButton.label" />
+                  </VBox>
+                </HBox>
+                <Label alignment="CENTER" text="%illustrationsSection.label" />
+              </VBox>
+
+              <Separator orientation="VERTICAL" prefHeight="55.0" prefWidth="29.0" />
+
+              <!-- Edit Section -->
+              <VBox fx:id="editSection" alignment="CENTER" spacing="5">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                  <!-- Find -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="findButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/find.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%findButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%findButton.label" />
+                  </VBox>
+
+                  <!-- Replace -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="replaceButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/replace.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%replaceButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%replaceButton.label" />
+                  </VBox>
+
+                  <!-- Select -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="selectButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/select.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%selectButton.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%selectButton.label" />
+                  </VBox>
+                </HBox>
+                <Label alignment="CENTER" text="%editSection.label" />
+              </VBox>
+
+            </HBox>
+          </content>
+        </Tab>
+
+
+        <Tab  text="%tab.draw.text">
+          <content>
+            <HBox fx:id="DrawContent" prefHeight="140.0" prefWidth="582.0" spacing="10" alignment="CENTER_LEFT">
+              <!-- Drawing Tools Section -->
+              <VBox spacing="10" alignment="CENTER">
+                <!-- First Row of Drawing Tools -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                  <!-- Selection Tool -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <RadioButton fx:id="selectToolButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/select-tool.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%selectToolButton.tooltip" />
+                      </tooltip>
+                    </RadioButton>
+                  </VBox>
+
+                  <!-- Lasso Tool -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <RadioButton fx:id="lassoToolButton" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/lasso-tool.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%lassoToolButton.tooltip" />
+                      </tooltip>
+                    </RadioButton>
+                  </VBox>
+
+                  <!-- Pen Tool -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <RadioButton fx:id="penTool1" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/pen1.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%penTool1.tooltip" />
+                      </tooltip>
+                    </RadioButton>
+                  </VBox>
+
+                  <!-- Highlighter Tool -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <RadioButton fx:id="highlighterTool" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/highlighter.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%highlighterTool.tooltip" />
+                      </tooltip>
+                    </RadioButton>
+                  </VBox>
+                </HBox>
+
+                <!-- Label for Drawing Tools Section -->
+                <Label alignment="CENTER" text="%drawingTools.label" />
+              </VBox>
+
+              <!-- Separator -->
+              <Separator orientation="VERTICAL" prefHeight="55.0" prefWidth="29.0" />
+
+              <!-- Ruler Tools Section -->
+              <VBox spacing="10" alignment="CENTER">
+                <!-- First Row of Ruler Tools -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+
+                  <!-- Ruler Tool -->
+                  <VBox alignment="CENTER" spacing="5">
+                    <Button fx:id="rulerTool" style="-fx-background-color: transparent;">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/ruler.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%rulerTool.tooltip" />
+                      </tooltip>
+                    </Button>
+                    <Label style="-fx-font-size: 9pt;" text="%rulerTool.label" />
+                  </VBox>
+
+                  <!-- Format Background Tool -->
+                  <VBox spacing="5">
+                    <MenuButton fx:id="formatBackgroundMenu" style="-fx-background-color: transparent;" text="%formatBackgroundMenu.text">
+                      <graphic>
+                        <ImageView fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                          <Image url="@images/format-background1.png" />
+                        </ImageView>
+                      </graphic>
+                      <tooltip>
+                        <Tooltip text="%formatBackgroundMenu.tooltip" />
+                      </tooltip>
+                      <items>
+                        <MenuItem text="%formatBackgroundMenu.solidFill" />
+                        <MenuItem text="%formatBackgroundMenu.gradientFill" />
+                        <MenuItem text="%formatBackgroundMenu.pictureFill" />
+                        <MenuItem text="%formatBackgroundMenu.patternFill" />
+                      </items>
+                    </MenuButton>
+                  </VBox>
+                </HBox>
+
+                <!-- Label for Ruler Tools Section -->
+                <Label alignment="CENTER" text="%rulerTools.label" />
+              </VBox>
+            </HBox>
+          </content>
+        </Tab>
+
+      </tabs>
+    </TabPane>
+  </top>
+
+  <center>
+    <ScrollPane fx:id="documentScrollPane" fitToHeight="true" fitToWidth="true">
+      <VBox fx:id="documentArea" alignment="TOP_CENTER" prefHeight="1120.0" prefWidth="800.0" spacing="10">
+        <Label fx:id="labelArea" />
+        <!-- Add Text Area or Other Content -->
+        <TextArea fx:id="textArea" prefHeight="1080.0" prefWidth="760.0" wrapText="true" />
+      </VBox>
+    </ScrollPane>
+  </center>
+
+  <!-- Add hidden VBox for popup inside BorderPane -->
+  <left>
+    <VBox fx:id="popupContainer" visible="false">
+      <Label fx:id="Labelpopup" text="%popupContainer.label.clipboard" />
+      <Button fx:id="Buttonpopup" text="%popupContainer.button.pasteAll" />
+      <Button fx:id="Buttonpopup1" text="%popupContainer.button.clearAll" />
+      <Label fx:id="Labelpopup1" text="%popupContainer.label.clickToPaste" />
+    </VBox>
+  </left>
+
+</BorderPane>
